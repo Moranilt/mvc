@@ -1,8 +1,9 @@
 <?php
 define("DIR", "app/");
-require_once DIR."model/model.php";
-require_once DIR."controller/controller.php";
-require_once DIR."view/view.php";
+require DIR."model/model.php";
+require DIR."controller/controller.php";
+require DIR."view/view.php";
+require DIR."model/db.php";
 
 /*
 $model = new Model();
