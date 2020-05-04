@@ -15,7 +15,7 @@ $db = new DB;
 $model = new Model($db);
 $view = new View($model, $template);
 $controller = new Controller($model);
-$controller->searchName("danil");
+$controller->searchName("lily");
 
 
 
