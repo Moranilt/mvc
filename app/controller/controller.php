@@ -9,5 +9,6 @@ class Controller{
   public function searchName($criteria){
     $this->model->filterName($criteria);
   }
+
 }
  ?>
