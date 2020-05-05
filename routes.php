@@ -1,20 +1,31 @@
 <?php
-$model = $_GET["model"];
-$view = $_GET["view"];
-$controller = $_GET["controller"];
-$action = $_GET["action"];
+$page = $_GET["page"];
 $criteria = $_GET["criteria"];
-$db = new DB;
-$template = "tpl/template.php";
 
+if(!empty($page)){
+  $data = array(
+    'tpl' => array('model' => 'model', 'view' => 'view', 'controller' => 'controller', 'template' => 'tpl/template.php')
+  );
 
-if(!(empty($model) || empty($view) || empty($controller) || empty($action) || empty($criteria))){
-  $m = new $model($db);
-  $c = new $controller($m);
-  $c->searchName("$criteria");
-  $t = "tpl/".$action.".php";
-  $v = new $view($m, $t);
-  
-  echo $v->output();
+  foreach($data as $key => $components){
+    if($page == $key){
+      $db = new DB;
+      $model = $components["model"];
+      $view = $components["view"];
+      $controller = $components["controller"];
+      $template = $components["template"];
+      break;
+    }
+  }
+
+  if(isset($model)){
+    $m = new $model($db);
+    $c = new $controller($m);
+    $c->searchName("$criteria");
+    $t = $template;
+    $v = new $view($m, $t);
+    echo $v->output();
+  }
 }
+
 ?>
