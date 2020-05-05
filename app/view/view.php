@@ -10,7 +10,8 @@ class View{
 
   public function output(){
     $data = $this->model->getUser();
-    require_once($this->template);
+    $users = $this->model->getAllUsers();
+    return $this->template;
   }
 }
  ?>

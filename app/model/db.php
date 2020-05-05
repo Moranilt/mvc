@@ -24,7 +24,7 @@ class DB{
 
   public function query($val){
     $query = mysqli_query($this->db, $val);
-     return mysqli_fetch_assoc($query);
+     return mysqli_fetch_all($query, MYSQLI_ASSOC);
   }
 }
 ?>

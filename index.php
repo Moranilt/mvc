@@ -27,6 +27,4 @@ $controller->searchName("lily");
 */
 
 
-
-echo $_GET["url"];
  ?>

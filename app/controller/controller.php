@@ -10,5 +10,8 @@ class Controller{
     $this->model->filterName($criteria);
   }
 
+  public function users(){
+    $this->model->getAllUsers();
+  }
 }
  ?>

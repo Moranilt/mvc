@@ -15,5 +15,10 @@ class Model{
     return $this->db->query("SELECT * FROM users WHERE firstname='$this->searchName'");
   }
 
+  public function getAllUsers(){
+    return $this->db->query("SELECT * FROM users");
+  }
+
 }
+
  ?>
